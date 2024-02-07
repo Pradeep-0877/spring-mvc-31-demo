@@ -1,0 +1,21 @@
+name: build
+on: workflow_dispatch
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout git repository
+        uses: actions/checkout@v3
+      - name: installing java 11
+        uses: actions/setup-java@v3
+        with: 
+          java-version: 11
+          distribution: 'zulu'
+          cache: maven
+      - name: building our application
+        run: mvn package -DskipTests
+      - name: archiving our application
+        uses: actions/archive-artifacts@v3
+        with: 
+          path: target/*.war
+      
