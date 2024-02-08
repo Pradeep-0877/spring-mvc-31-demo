@@ -19,7 +19,9 @@ jobs:
                 tag: "v${{github.event.inputs.artifact-version}}"
               
                 fileName: "app-${{github.event.inputs.artifact-version}}.zip"
-                extract: true
+                extract: false
+          - run: |
+              unzip app-${{github.event.inputs.artifact-version}}.zip
           - name: deploying to tomcat
             run: curl -v -u pradeep:pradeep -T *.war http://34.125.215.223:8080/manager/text/deploy?path=/my-app
              
