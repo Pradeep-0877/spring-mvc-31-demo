@@ -34,7 +34,7 @@ jobs:
             filename: 'app.zip'
         - run: |
              ls
-             ped
+             pwd
         - name: Create release
           id: create_release
           uses: actions/create-release@v1
