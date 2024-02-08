@@ -4,7 +4,7 @@ on:
        inputs: 
           ENV: 
             type: environment
-            required: true
+            # required: true
           artifact-version: 
             type: string
             description: provide the release version
