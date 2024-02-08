@@ -22,6 +22,8 @@ jobs:
                 extract: false
           - run: |
               unzip app-${{github.event.inputs.artifact-version}}.zip
+              ls
+              pwd
           - name: deploying to tomcat
             run: curl -v -u pradeep:pradeep -T *.war http://34.125.215.223:8080/manager/text/deploy?path=/my-app
              
