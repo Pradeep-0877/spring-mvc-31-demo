@@ -20,5 +20,11 @@ jobs:
               
                 fileName: "app-${{github.event.inputs.artifact-version}}.zip"
                 extract: true
+          - run: |
+               ls
+               pwd  
+               cd */
+               ls
+               pwd
              
          
