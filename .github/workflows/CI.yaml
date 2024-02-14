@@ -16,11 +16,11 @@ jobs:
       - name: building our application
         run: mvn package -DskipTests
       - run: |
-          echo "## Java-version :11" >> $GITHUB_STEP_WORKFLOW
-          echo "## Branch :${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
-          echo "## Build-version :$GITHUB_RUN_NUMBER" >>$GITHUB_STEP_SUMMARY
-          echo "## Sonar :false" >> $GITHUB_STEP_SUMMARY
-          echo ${{github}}
+          echo "## Java-version 11" >> $GITHUB_STEP_WORKFLOW
+          echo "## Branch ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "## Build-version $GITHUB_RUN_NUMBER" >>$GITHUB_STEP_SUMMARY
+          echo "## Sonar false" >> $GITHUB_STEP_SUMMARY
+          echo "${{github}}"
           
       
       - name: archiving our artifacts
