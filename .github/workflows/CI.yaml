@@ -4,6 +4,7 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     steps: 
+      - run: echo "###This is a summary for spring-mvc-31-demo Project" >> $GITHUB_STEP_SUMMARY
       - name: Checkout git repository
         uses: actions/checkout@v3
       - name: installing java 11
