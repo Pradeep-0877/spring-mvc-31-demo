@@ -4,7 +4,7 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     steps: 
-      - run: echo "###This is a summary for spring-mvc-31-demo Project" >> $GITHUB_STEP_SUMMARY
+      - run: echo "### This is a summary for spring-mvc-31-demo Project" >> $GITHUB_STEP_SUMMARY
       - name: Checkout git repository
         uses: actions/checkout@v3
       - name: installing java 11
@@ -15,6 +15,13 @@ jobs:
           cache: maven
       - name: building our application
         run: mvn package -DskipTests
+      - run: |
+          echo "## Java-version :11" >> $GITHUB_STEP_WORKFLOW
+          echo "## Branch :${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "## Build-version :$GITHUB_RUN_NUMBER" >>$GITHUB_STEP_SUMMARY
+          echo "## Sonar :false" >> $GITHUB_STEP_SUMMARY
+          
+      
       - name: archiving our artifacts
         uses: actions/upload-artifact@v3
         with: 
