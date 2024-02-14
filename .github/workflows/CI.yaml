@@ -5,19 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - run: | 
-          echo "This is the lead in sentence for the list" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY # this is a blank line
-          echo "- Branch: ${{github.ref_name}}" >> $GITHUB_STEP_SUMMARY
-          echo "- java-version : 11" >> $GITHUB_STEP_SUMMARY
-          echo "- Build-version : ${{github.run_number}}" >> $GITHUB_STEP_SUMMARY
-          echo "- sonar : False" >> $GITHUB_STEP_SUMMARY
+          # echo "This is the lead in sentence for the list" >> $GITHUB_STEP_SUMMARY
+          echo "### The project Name is spring-mvc-31-demo" >> $GITHUB_STEP_SUMMARY # this is a blank line
+          echo "- Branch: ***${{github.ref_name}}***" >> $GITHUB_STEP_SUMMARY
+          echo "- java-version : ***11***" >> $GITHUB_STEP_SUMMARY
+          echo "- Build-version : ***${{github.run_number}}***" >> $GITHUB_STEP_SUMMARY
+          echo "- sonar : ***False***" >> $GITHUB_STEP_SUMMARY
           echo "${{github}}"
-          # echo "### This is a summary for spring-mvc-31-demo Project" >> $GITHUB_STEP_SUMMARY
-          # echo "- Java-version 11" >> $GITHUB_STEP_WORKFLOW
-          # echo "- Branch ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
-          # echo "- Build-version $GITHUB_RUN_NUMBER" >> $GITHUB_STEP_SUMMARY
-          # echo "- Sonar false" >> $GITHUB_STEP_SUMMARY
-          # echo "${{github}}"
       - name: Checkout git repository
         uses: actions/checkout@v3
       - name: installing java 11
