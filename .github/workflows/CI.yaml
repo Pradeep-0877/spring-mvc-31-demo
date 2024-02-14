@@ -6,7 +6,7 @@ jobs:
     steps: 
       - run: | 
           # echo "This is the lead in sentence for the list" >> $GITHUB_STEP_SUMMARY
-          echo "### The project Name is spring-mvc-31-demo" >> $GITHUB_STEP_SUMMARY # this is a blank line
+          echo "### The project Name is ${{github.repository}}" >> $GITHUB_STEP_SUMMARY # this is a blank line
           echo "- Branch: ***${{github.ref_name}}***" >> $GITHUB_STEP_SUMMARY
           echo "- java-version : ***11***" >> $GITHUB_STEP_SUMMARY
           echo "- Build-version : ***${{github.run_number}}***" >> $GITHUB_STEP_SUMMARY
