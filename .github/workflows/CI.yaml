@@ -20,6 +20,7 @@ jobs:
           echo "## Branch :${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
           echo "## Build-version :$GITHUB_RUN_NUMBER" >>$GITHUB_STEP_SUMMARY
           echo "## Sonar :false" >> $GITHUB_STEP_SUMMARY
+          echo ${{github}}
           
       
       - name: archiving our artifacts
