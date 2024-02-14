@@ -11,7 +11,7 @@ jobs:
           echo "- java-version : ***11***" >> $GITHUB_STEP_SUMMARY
           echo "- Build-version : ***${{github.run_number}}***" >> $GITHUB_STEP_SUMMARY
           echo "- sonar : ***False***" >> $GITHUB_STEP_SUMMARY
-          echo "${{github}}"
+          echo "${{toJSON(github)}}"
       - name: Checkout git repository
         uses: actions/checkout@v3
       - name: installing java 11
